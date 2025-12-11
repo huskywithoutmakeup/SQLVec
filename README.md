@@ -6,11 +6,10 @@ This is the supplement for the paper - SQLVec: SQL-Based Vector Similarity Searc
 
 ````
 .
-├── Scripts            # Unified scripts for all query variants and optimization strategies across databases
-├── dataload           # Loading of datasets and indexes
+├── dataload           # the process of loading datasets and indexes
 ├── SQLvec-db  		   # SQLvec framework implemented on DuckDB, including specific query examples
 ├── SQLvec-pg  		   # SQLvec framework implemented on PostgreSQL, including specific query examples
-└── others             # more details
+└── others             # More details implemented across additional databases, including kuzudb, mariadb
 ````
 
 __See each folder for more information.__
@@ -43,5 +42,5 @@ pip install duckdb==1.1.3
 
 ### Other
 
-The experiments further need other DBMS, such as MariaDB.
+The experiments further need other DBMS, such as MariaDB (mysql) and graph database kuzudb.
 
