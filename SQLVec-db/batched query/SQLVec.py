@@ -71,6 +71,10 @@ def main(args):
     con.execute("SET memory_limit = '10GB';")
     con.execute("SET max_memory = '10GB';")
 
+    con.execute('DROP TABLE IF EXISTS L_table')
+    con.execute('DROP TABLE IF EXISTS V_table')
+    con.execute('DROP TABLE IF EXISTS tp_table')
+
     enter_node = con.execute('SELECT data FROM data_table WHERE id = ?',parameters=[args.enter_node]).fetchall()[0][0]
     dim = len(enter_node)
     con.execute('CREATE TEMP TABLE L_table(id INTEGER, dist DOUBLE, batch INTEGER)') # L
