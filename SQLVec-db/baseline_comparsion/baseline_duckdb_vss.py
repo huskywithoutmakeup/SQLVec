@@ -85,7 +85,7 @@ def main(args):
     q = con.execute('SELECT data FROM query_table;').fetchall()
     dim = len(q[0][0])
     
-    sql = 'SELECT id FROM data_table ORDER BY array_distance(data_table.data, ?::FLOAT[' + str(dim) + ']) limit ;' + str(args.k)
+    sql = 'SELECT id FROM data_table ORDER BY array_distance(data_table.data, ?::FLOAT[' + str(dim) + ']) limit ' + str(args.k)
     res = []
     start_time_total = time.time()
     for i in range(args.querysize):
@@ -118,5 +118,6 @@ if __name__ == '__main__':
     parser.add_argument('--gt_path', type=str, help='the path of groundtruth file')
     parser.add_argument('--gt_type', type=str, default='.fvecs', help='the type of groundtruth file')
     args = parser.parse_args()
+
 
     main(args)
